@@ -346,13 +346,7 @@ private: System::Void exitbutton_click(System::Object^ sender, System::EventArgs
 
 	this->Close();
 }
-private: System::Void sinupLabel_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	this->Hide();
-	guiFunds::Sinup^ signupForm = gcnew guiFunds::Sinup();
-	// Show the Sinup form
-	signupForm->Show();
-}
+private: System::Void sinupLabel_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void forgotPasswordlabel_click(System::Object^ sender, System::EventArgs^ e) {
 
 }

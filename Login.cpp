@@ -5,15 +5,10 @@
 using namespace System;
 using namespace System::Windows::Forms;
 
-int main(array<System::String^>^ args)
-{
-	Application::EnableVisualStyles();
-	Application::SetCompatibleTextRenderingDefault(false);
+System::Void guiFunds::Login::sinupLabel_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	// Instantiate and run the Sinup form
-	guiFunds::Login^ loginForm = gcnew guiFunds::Login();
-	Application::Run(loginForm);
-
-
-	return 0;
+	this->Hide();
+	guiFunds::Sinup^ signupForm = gcnew guiFunds::Sinup();
+	// Show the Sinup form
+	signupForm->Show();
 }

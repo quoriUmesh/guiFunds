@@ -1,5 +1,5 @@
 #pragma once
-//#include"Login.h"
+#include"Login.h"
 
 namespace guiFunds {
 
@@ -705,16 +705,7 @@ private: System::Void passwordTextBox_TextChanged(System::Object^ sender, System
 }
 private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private:System::Void sinupLabel_Click(System::Object^ sender, System::EventArgs^ e) {
-		// Close the current form
-		this->Close();
-
-		// Create an instance of the LoginForm
-		//guiFunds::Login^ loginForm = gcnew guiFunds::Login();
-
-		// Show the LoginForm
-		//loginForm->Show();
-	}
+private:System::Void sinupLabel_Click(System::Object^ sender, System::EventArgs^ e);
 	
 
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
