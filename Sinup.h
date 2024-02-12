@@ -47,7 +47,11 @@ namespace guiFunds {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::CheckBox^ checkBox1;
 	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ sinupButton;
+
+
+
+
 	private: System::Windows::Forms::TextBox^ passwordTextBox;
 	private: System::Windows::Forms::TextBox^ usernameTextBox;
 	private: System::Windows::Forms::Label^ label3;
@@ -56,33 +60,50 @@ namespace guiFunds {
 	private: System::Windows::Forms::Label^ label6;
 
 	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ passConfirmBox;
+
+
 
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::TextBox^ emailTextbox;
+
+
 	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::TextBox^ nameTextbox;
+	private: System::Windows::Forms::TextBox^ addressTextbox;
 
 
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox4;
+
+
+
+
 	private: System::Windows::Forms::Label^ label10;
-	private: System::Windows::Forms::TextBox^ textBox5;
+	private: System::Windows::Forms::TextBox^ phoneTextbox;
+
+
 	private: System::Windows::Forms::Label^ label11;
-	private: System::Windows::Forms::TextBox^ textBox6;
+	private: System::Windows::Forms::TextBox^ dobTextbox;
+
+
 	private: System::Windows::Forms::Label^ label12;
-	private: System::Windows::Forms::TextBox^ textBox8;
+	private: System::Windows::Forms::TextBox^ mpinTextbox;
+
+
 	private: System::Windows::Forms::Label^ label14;
-	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::TextBox^ confirmMpinbox;
+
+
 	private: System::Windows::Forms::Label^ confirmMpinLabel;
 	private: System::Windows::Forms::Label^ label13;
+	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::Panel^ panel5;
+	private: System::Windows::Forms::Panel^ panel4;
+	private: System::Windows::Forms::Panel^ panel6;
+	private: System::Windows::Forms::Panel^ panel7;
+	private: System::Windows::Forms::Panel^ panel8;
+	private: System::Windows::Forms::Panel^ panel9;
+	private: System::Windows::Forms::Panel^ panel10;
 
-
-
-
-
-	protected:
-
-	protected:
 
 	private:
 		/// <summary>
@@ -99,15 +120,15 @@ namespace guiFunds {
 		{
 			System::Windows::Forms::Panel^ panel2;
 			System::Windows::Forms::Panel^ panel1;
-			System::Windows::Forms::Panel^ panel3;
-			System::Windows::Forms::Panel^ panel5;
-			System::Windows::Forms::Panel^ panel4;
-			System::Windows::Forms::Panel^ panel6;
-			System::Windows::Forms::Panel^ panel7;
-			System::Windows::Forms::Panel^ panel8;
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Sinup::typeid));
-			System::Windows::Forms::Panel^ panel9;
-			System::Windows::Forms::Panel^ panel10;
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->panel6 = (gcnew System::Windows::Forms::Panel());
+			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->panel8 = (gcnew System::Windows::Forms::Panel());
+			this->panel9 = (gcnew System::Windows::Forms::Panel());
+			this->panel10 = (gcnew System::Windows::Forms::Panel());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->signinLabel = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
@@ -115,7 +136,7 @@ namespace guiFunds {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->sinupButton = (gcnew System::Windows::Forms::Button());
 			this->passwordTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->usernameTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -123,32 +144,24 @@ namespace guiFunds {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->passConfirmBox = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->emailTextbox = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->nameTextbox = (gcnew System::Windows::Forms::TextBox());
+			this->addressTextbox = (gcnew System::Windows::Forms::TextBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->phoneTextbox = (gcnew System::Windows::Forms::TextBox());
 			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->dobTextbox = (gcnew System::Windows::Forms::TextBox());
 			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->mpinTextbox = (gcnew System::Windows::Forms::TextBox());
 			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->confirmMpinbox = (gcnew System::Windows::Forms::TextBox());
 			this->confirmMpinLabel = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			panel2 = (gcnew System::Windows::Forms::Panel());
 			panel1 = (gcnew System::Windows::Forms::Panel());
-			panel3 = (gcnew System::Windows::Forms::Panel());
-			panel5 = (gcnew System::Windows::Forms::Panel());
-			panel4 = (gcnew System::Windows::Forms::Panel());
-			panel6 = (gcnew System::Windows::Forms::Panel());
-			panel7 = (gcnew System::Windows::Forms::Panel());
-			panel8 = (gcnew System::Windows::Forms::Panel());
-			panel9 = (gcnew System::Windows::Forms::Panel());
-			panel10 = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -174,63 +187,83 @@ namespace guiFunds {
 			// 
 			// panel3
 			// 
-			panel3->BackColor = System::Drawing::Color::DarkSlateGray;
-			panel3->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			panel3->ForeColor = System::Drawing::Color::Gray;
-			panel3->Location = System::Drawing::Point(567, 358);
-			panel3->Name = L"panel3";
-			panel3->Size = System::Drawing::Size(200, 2);
-			panel3->TabIndex = 31;
+			this->panel3->BackColor = System::Drawing::Color::DarkSlateGray;
+			this->panel3->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel3->ForeColor = System::Drawing::Color::Gray;
+			this->panel3->Location = System::Drawing::Point(567, 358);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(200, 2);
+			this->panel3->TabIndex = 31;
 			// 
 			// panel5
 			// 
-			panel5->BackColor = System::Drawing::Color::DarkSlateGray;
-			panel5->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			panel5->ForeColor = System::Drawing::Color::Gray;
-			panel5->Location = System::Drawing::Point(126, 298);
-			panel5->Name = L"panel5";
-			panel5->Size = System::Drawing::Size(250, 2);
-			panel5->TabIndex = 39;
+			this->panel5->BackColor = System::Drawing::Color::DarkSlateGray;
+			this->panel5->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel5->ForeColor = System::Drawing::Color::Gray;
+			this->panel5->Location = System::Drawing::Point(126, 298);
+			this->panel5->Name = L"panel5";
+			this->panel5->Size = System::Drawing::Size(250, 2);
+			this->panel5->TabIndex = 39;
 			// 
 			// panel4
 			// 
-			panel4->BackColor = System::Drawing::Color::DarkSlateGray;
-			panel4->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			panel4->ForeColor = System::Drawing::Color::Gray;
-			panel4->Location = System::Drawing::Point(131, 103);
-			panel4->Name = L"panel4";
-			panel4->Size = System::Drawing::Size(250, 2);
-			panel4->TabIndex = 36;
+			this->panel4->BackColor = System::Drawing::Color::DarkSlateGray;
+			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel4->ForeColor = System::Drawing::Color::Gray;
+			this->panel4->Location = System::Drawing::Point(131, 103);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(250, 2);
+			this->panel4->TabIndex = 36;
 			// 
 			// panel6
 			// 
-			panel6->BackColor = System::Drawing::Color::DarkSlateGray;
-			panel6->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			panel6->ForeColor = System::Drawing::Color::Gray;
-			panel6->Location = System::Drawing::Point(129, 148);
-			panel6->Name = L"panel6";
-			panel6->Size = System::Drawing::Size(250, 2);
-			panel6->TabIndex = 42;
+			this->panel6->BackColor = System::Drawing::Color::DarkSlateGray;
+			this->panel6->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel6->ForeColor = System::Drawing::Color::Gray;
+			this->panel6->Location = System::Drawing::Point(129, 148);
+			this->panel6->Name = L"panel6";
+			this->panel6->Size = System::Drawing::Size(250, 2);
+			this->panel6->TabIndex = 42;
 			// 
 			// panel7
 			// 
-			panel7->BackColor = System::Drawing::Color::DarkSlateGray;
-			panel7->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			panel7->ForeColor = System::Drawing::Color::Gray;
-			panel7->Location = System::Drawing::Point(126, 246);
-			panel7->Name = L"panel7";
-			panel7->Size = System::Drawing::Size(250, 2);
-			panel7->TabIndex = 45;
+			this->panel7->BackColor = System::Drawing::Color::DarkSlateGray;
+			this->panel7->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel7->ForeColor = System::Drawing::Color::Gray;
+			this->panel7->Location = System::Drawing::Point(126, 246);
+			this->panel7->Name = L"panel7";
+			this->panel7->Size = System::Drawing::Size(250, 2);
+			this->panel7->TabIndex = 45;
 			// 
 			// panel8
 			// 
-			panel8->BackColor = System::Drawing::Color::DarkSlateGray;
-			panel8->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			panel8->ForeColor = System::Drawing::Color::Gray;
-			panel8->Location = System::Drawing::Point(128, 195);
-			panel8->Name = L"panel8";
-			panel8->Size = System::Drawing::Size(250, 2);
-			panel8->TabIndex = 48;
+			this->panel8->BackColor = System::Drawing::Color::DarkSlateGray;
+			this->panel8->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel8->ForeColor = System::Drawing::Color::Gray;
+			this->panel8->Location = System::Drawing::Point(128, 195);
+			this->panel8->Name = L"panel8";
+			this->panel8->Size = System::Drawing::Size(250, 2);
+			this->panel8->TabIndex = 48;
+			// 
+			// panel9
+			// 
+			this->panel9->BackColor = System::Drawing::Color::DarkSlateGray;
+			this->panel9->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel9->ForeColor = System::Drawing::Color::Gray;
+			this->panel9->Location = System::Drawing::Point(126, 413);
+			this->panel9->Name = L"panel9";
+			this->panel9->Size = System::Drawing::Size(200, 2);
+			this->panel9->TabIndex = 53;
+			// 
+			// panel10
+			// 
+			this->panel10->BackColor = System::Drawing::Color::DarkSlateGray;
+			this->panel10->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel10->ForeColor = System::Drawing::Color::Gray;
+			this->panel10->Location = System::Drawing::Point(567, 419);
+			this->panel10->Name = L"panel10";
+			this->panel10->Size = System::Drawing::Size(200, 2);
+			this->panel10->TabIndex = 55;
 			// 
 			// label5
 			// 
@@ -332,19 +365,20 @@ namespace guiFunds {
 			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &Sinup::button2_Click);
 			// 
-			// button1
+			// sinupButton
 			// 
-			this->button1->BackColor = System::Drawing::Color::Navy;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Javanese Text", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->sinupButton->BackColor = System::Drawing::Color::Navy;
+			this->sinupButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->sinupButton->Font = (gcnew System::Drawing::Font(L"Javanese Text", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::Color::Transparent;
-			this->button1->Location = System::Drawing::Point(162, 541);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(119, 51);
-			this->button1->TabIndex = 22;
-			this->button1->Text = L"Sin up";
-			this->button1->UseVisualStyleBackColor = false;
+			this->sinupButton->ForeColor = System::Drawing::Color::Transparent;
+			this->sinupButton->Location = System::Drawing::Point(162, 541);
+			this->sinupButton->Name = L"sinupButton";
+			this->sinupButton->Size = System::Drawing::Size(119, 51);
+			this->sinupButton->TabIndex = 22;
+			this->sinupButton->Text = L"Sign up";
+			this->sinupButton->UseVisualStyleBackColor = false;
+			this->sinupButton->Click += gcnew System::EventHandler(this, &Sinup::sinupButton_Click);
 			// 
 			// passwordTextBox
 			// 
@@ -356,7 +390,7 @@ namespace guiFunds {
 			this->passwordTextBox->PasswordChar = '*';
 			this->passwordTextBox->Size = System::Drawing::Size(200, 37);
 			this->passwordTextBox->TabIndex = 21;
-			this->passwordTextBox->TextChanged += gcnew System::EventHandler(this, &Sinup::passwordTextBox_TextChanged);
+			this->passwordTextBox->TextChanged += gcnew System::EventHandler(this, &Sinup::passwordTextbox_TextChanged);
 			// 
 			// usernameTextBox
 			// 
@@ -367,6 +401,7 @@ namespace guiFunds {
 			this->usernameTextBox->Name = L"usernameTextBox";
 			this->usernameTextBox->Size = System::Drawing::Size(200, 37);
 			this->usernameTextBox->TabIndex = 18;
+			this->usernameTextBox->TextChanged += gcnew System::EventHandler(this, &Sinup::usernameTextbox_TextChanged);
 			// 
 			// label3
 			// 
@@ -428,16 +463,16 @@ namespace guiFunds {
 			this->label7->TabIndex = 30;
 			this->label7->Text = L"Confirm Password";
 			// 
-			// textBox2
+			// passConfirmBox
 			// 
-			this->textBox2->BackColor = System::Drawing::Color::Black;
-			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox2->ForeColor = System::Drawing::Color::White;
-			this->textBox2->Location = System::Drawing::Point(567, 321);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->PasswordChar = '*';
-			this->textBox2->Size = System::Drawing::Size(200, 37);
-			this->textBox2->TabIndex = 33;
+			this->passConfirmBox->BackColor = System::Drawing::Color::Black;
+			this->passConfirmBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->passConfirmBox->ForeColor = System::Drawing::Color::White;
+			this->passConfirmBox->Location = System::Drawing::Point(567, 321);
+			this->passConfirmBox->Name = L"passConfirmBox";
+			this->passConfirmBox->PasswordChar = '*';
+			this->passConfirmBox->Size = System::Drawing::Size(200, 37);
+			this->passConfirmBox->TabIndex = 33;
 			// 
 			// label8
 			// 
@@ -452,15 +487,15 @@ namespace guiFunds {
 			this->label8->TabIndex = 34;
 			this->label8->Text = L"Full Name";
 			// 
-			// textBox3
+			// emailTextbox
 			// 
-			this->textBox3->BackColor = System::Drawing::Color::Black;
-			this->textBox3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox3->ForeColor = System::Drawing::Color::White;
-			this->textBox3->Location = System::Drawing::Point(126, 261);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(250, 37);
-			this->textBox3->TabIndex = 38;
+			this->emailTextbox->BackColor = System::Drawing::Color::Black;
+			this->emailTextbox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->emailTextbox->ForeColor = System::Drawing::Color::White;
+			this->emailTextbox->Location = System::Drawing::Point(126, 261);
+			this->emailTextbox->Name = L"emailTextbox";
+			this->emailTextbox->Size = System::Drawing::Size(250, 37);
+			this->emailTextbox->TabIndex = 38;
 			// 
 			// label9
 			// 
@@ -476,25 +511,25 @@ namespace guiFunds {
 			this->label9->Text = L"E-mail";
 			this->label9->Click += gcnew System::EventHandler(this, &Sinup::label9_Click);
 			// 
-			// textBox1
+			// nameTextbox
 			// 
-			this->textBox1->BackColor = System::Drawing::Color::Black;
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox1->ForeColor = System::Drawing::Color::White;
-			this->textBox1->Location = System::Drawing::Point(131, 66);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(250, 37);
-			this->textBox1->TabIndex = 35;
+			this->nameTextbox->BackColor = System::Drawing::Color::Black;
+			this->nameTextbox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->nameTextbox->ForeColor = System::Drawing::Color::White;
+			this->nameTextbox->Location = System::Drawing::Point(131, 66);
+			this->nameTextbox->Name = L"nameTextbox";
+			this->nameTextbox->Size = System::Drawing::Size(250, 37);
+			this->nameTextbox->TabIndex = 35;
 			// 
-			// textBox4
+			// addressTextbox
 			// 
-			this->textBox4->BackColor = System::Drawing::Color::Black;
-			this->textBox4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox4->ForeColor = System::Drawing::Color::White;
-			this->textBox4->Location = System::Drawing::Point(129, 111);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(250, 37);
-			this->textBox4->TabIndex = 41;
+			this->addressTextbox->BackColor = System::Drawing::Color::Black;
+			this->addressTextbox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->addressTextbox->ForeColor = System::Drawing::Color::White;
+			this->addressTextbox->Location = System::Drawing::Point(129, 111);
+			this->addressTextbox->Name = L"addressTextbox";
+			this->addressTextbox->Size = System::Drawing::Size(250, 37);
+			this->addressTextbox->TabIndex = 41;
 			// 
 			// label10
 			// 
@@ -509,15 +544,15 @@ namespace guiFunds {
 			this->label10->TabIndex = 40;
 			this->label10->Text = L"Address";
 			// 
-			// textBox5
+			// phoneTextbox
 			// 
-			this->textBox5->BackColor = System::Drawing::Color::Black;
-			this->textBox5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox5->ForeColor = System::Drawing::Color::White;
-			this->textBox5->Location = System::Drawing::Point(126, 209);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(250, 37);
-			this->textBox5->TabIndex = 44;
+			this->phoneTextbox->BackColor = System::Drawing::Color::Black;
+			this->phoneTextbox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->phoneTextbox->ForeColor = System::Drawing::Color::White;
+			this->phoneTextbox->Location = System::Drawing::Point(126, 209);
+			this->phoneTextbox->Name = L"phoneTextbox";
+			this->phoneTextbox->Size = System::Drawing::Size(250, 37);
+			this->phoneTextbox->TabIndex = 44;
 			// 
 			// label11
 			// 
@@ -532,15 +567,15 @@ namespace guiFunds {
 			this->label11->TabIndex = 43;
 			this->label11->Text = L"Phone";
 			// 
-			// textBox6
+			// dobTextbox
 			// 
-			this->textBox6->BackColor = System::Drawing::Color::Black;
-			this->textBox6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox6->ForeColor = System::Drawing::Color::White;
-			this->textBox6->Location = System::Drawing::Point(128, 158);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(250, 37);
-			this->textBox6->TabIndex = 47;
+			this->dobTextbox->BackColor = System::Drawing::Color::Black;
+			this->dobTextbox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->dobTextbox->ForeColor = System::Drawing::Color::White;
+			this->dobTextbox->Location = System::Drawing::Point(128, 158);
+			this->dobTextbox->Name = L"dobTextbox";
+			this->dobTextbox->Size = System::Drawing::Size(250, 37);
+			this->dobTextbox->TabIndex = 47;
 			// 
 			// label12
 			// 
@@ -555,26 +590,17 @@ namespace guiFunds {
 			this->label12->TabIndex = 46;
 			this->label12->Text = L"Date Of Birth";
 			// 
-			// panel9
+			// mpinTextbox
 			// 
-			panel9->BackColor = System::Drawing::Color::DarkSlateGray;
-			panel9->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			panel9->ForeColor = System::Drawing::Color::Gray;
-			panel9->Location = System::Drawing::Point(126, 413);
-			panel9->Name = L"panel9";
-			panel9->Size = System::Drawing::Size(200, 2);
-			panel9->TabIndex = 53;
-			// 
-			// textBox8
-			// 
-			this->textBox8->BackColor = System::Drawing::Color::Black;
-			this->textBox8->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox8->ForeColor = System::Drawing::Color::White;
-			this->textBox8->Location = System::Drawing::Point(126, 376);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->PasswordChar = '*';
-			this->textBox8->Size = System::Drawing::Size(200, 37);
-			this->textBox8->TabIndex = 54;
+			this->mpinTextbox->BackColor = System::Drawing::Color::Black;
+			this->mpinTextbox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->mpinTextbox->ForeColor = System::Drawing::Color::White;
+			this->mpinTextbox->Location = System::Drawing::Point(126, 376);
+			this->mpinTextbox->Name = L"mpinTextbox";
+			this->mpinTextbox->PasswordChar = '*';
+			this->mpinTextbox->Size = System::Drawing::Size(200, 37);
+			this->mpinTextbox->TabIndex = 54;
+			this->mpinTextbox->ModifiedChanged += gcnew System::EventHandler(this, &Sinup::mpinTextbox_TextChanged);
 			// 
 			// label14
 			// 
@@ -588,26 +614,16 @@ namespace guiFunds {
 			this->label14->TabIndex = 49;
 			this->label14->Text = L"Mpin";
 			// 
-			// textBox7
+			// confirmMpinbox
 			// 
-			this->textBox7->BackColor = System::Drawing::Color::Black;
-			this->textBox7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox7->ForeColor = System::Drawing::Color::White;
-			this->textBox7->Location = System::Drawing::Point(567, 382);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->PasswordChar = '*';
-			this->textBox7->Size = System::Drawing::Size(200, 37);
-			this->textBox7->TabIndex = 56;
-			// 
-			// panel10
-			// 
-			panel10->BackColor = System::Drawing::Color::DarkSlateGray;
-			panel10->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			panel10->ForeColor = System::Drawing::Color::Gray;
-			panel10->Location = System::Drawing::Point(567, 419);
-			panel10->Name = L"panel10";
-			panel10->Size = System::Drawing::Size(200, 2);
-			panel10->TabIndex = 55;
+			this->confirmMpinbox->BackColor = System::Drawing::Color::Black;
+			this->confirmMpinbox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->confirmMpinbox->ForeColor = System::Drawing::Color::White;
+			this->confirmMpinbox->Location = System::Drawing::Point(567, 382);
+			this->confirmMpinbox->Name = L"confirmMpinbox";
+			this->confirmMpinbox->PasswordChar = '*';
+			this->confirmMpinbox->Size = System::Drawing::Size(200, 37);
+			this->confirmMpinbox->TabIndex = 56;
 			// 
 			// confirmMpinLabel
 			// 
@@ -642,29 +658,29 @@ namespace guiFunds {
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(878, 612);
 			this->Controls->Add(this->label13);
-			this->Controls->Add(this->textBox7);
-			this->Controls->Add(panel10);
-			this->Controls->Add(this->textBox8);
-			this->Controls->Add(panel9);
+			this->Controls->Add(this->confirmMpinbox);
+			this->Controls->Add(this->panel10);
+			this->Controls->Add(this->mpinTextbox);
+			this->Controls->Add(this->panel9);
 			this->Controls->Add(this->confirmMpinLabel);
 			this->Controls->Add(this->label14);
-			this->Controls->Add(panel8);
-			this->Controls->Add(this->textBox6);
+			this->Controls->Add(this->panel8);
+			this->Controls->Add(this->dobTextbox);
 			this->Controls->Add(this->label12);
-			this->Controls->Add(panel7);
-			this->Controls->Add(this->textBox5);
+			this->Controls->Add(this->panel7);
+			this->Controls->Add(this->phoneTextbox);
 			this->Controls->Add(this->label11);
-			this->Controls->Add(panel6);
-			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->panel6);
+			this->Controls->Add(this->addressTextbox);
 			this->Controls->Add(this->label10);
-			this->Controls->Add(panel5);
-			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->panel5);
+			this->Controls->Add(this->emailTextbox);
 			this->Controls->Add(this->label9);
-			this->Controls->Add(panel4);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->panel4);
+			this->Controls->Add(this->nameTextbox);
 			this->Controls->Add(this->label8);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(panel3);
+			this->Controls->Add(this->passConfirmBox);
+			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->signinLabel);
@@ -673,7 +689,7 @@ namespace guiFunds {
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->sinupButton);
 			this->Controls->Add(panel2);
 			this->Controls->Add(this->passwordTextBox);
 			this->Controls->Add(panel1);
@@ -701,15 +717,45 @@ namespace guiFunds {
 	}
 private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void passwordTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+
 private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private:System::Void sinupLabel_Click(System::Object^ sender, System::EventArgs^ e);
 	
 
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
+	
+	// Display a message box to confirm exit
+	System::Windows::Forms::DialogResult result = MessageBox::Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
+
+	// Check the user's response
+	if (result == System::Windows::Forms::DialogResult::Yes) {
+		// Exit the application
+		Application::Exit();
+	}
+}
+
+private:System::Void sinupButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+private: System::Void mpinTextbox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (confirmMpinbox->Text == mpinTextbox->Text && System::Text::RegularExpressions::Regex::IsMatch(mpinTextbox->Text, "\\b\\d{4}\\b")) {
+		sinupButton->Enabled = true; // Enable the button if contents match
+	}
+	else {
+		sinupButton->Enabled = false; // Disable the button if contents do not match
+	}
+}
+
+private: System::Void passwordTextbox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (passwordTextBox->Text == passConfirmBox->Text) {
+		sinupButton->Enabled = true; // Enable the button if contents match
+	}
+	else {
+		sinupButton->Enabled = false; // Disable the button if contents do not match
+	}
+}
+
+private: System::Void usernameTextbox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

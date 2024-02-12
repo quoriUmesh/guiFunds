@@ -1,15 +1,15 @@
 #include "Login.h"
 #include"Sinup.h"
+#include <vcclr.h>
 
 
 using namespace System;
 using namespace System::Windows::Forms;
 
-int main(array<System::String^>^ args)
-{
+[STAThreadAttribute]
+int main() {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
-
 	// Instantiate and run the Sinup form
 	guiFunds::Login^ loginForm = gcnew guiFunds::Login();
 	Application::Run(loginForm);

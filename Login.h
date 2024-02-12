@@ -1,5 +1,11 @@
 #pragma once
 #include"Sinup.h"
+#include"account.h"
+#include"user.h"
+#include"Transaction.h"
+#include"DeleteAccount.h"
+#include"Registration.h"
+
 
 namespace guiFunds {
 
@@ -99,9 +105,6 @@ namespace guiFunds {
 			panel2 = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// panel1
-			// 
 			panel1->BackColor = System::Drawing::Color::DarkSlateGray;
 			panel1->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			panel1->ForeColor = System::Drawing::Color::Gray;
@@ -109,9 +112,6 @@ namespace guiFunds {
 			panel1->Name = L"panel1";
 			panel1->Size = System::Drawing::Size(280, 2);
 			panel1->TabIndex = 4;
-			// 
-			// panel2
-			// 
 			panel2->BackColor = System::Drawing::Color::DarkSlateGray;
 			panel2->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			panel2->ForeColor = System::Drawing::Color::Gray;
@@ -119,12 +119,9 @@ namespace guiFunds {
 			panel2->Name = L"panel2";
 			panel2->Size = System::Drawing::Size(280, 2);
 			panel2->TabIndex = 5;
-			// 
-			// label1
-			// 
 			this->label1->AutoSize = true;
 			this->label1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Javanese Text", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Javanese Text", 15.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(53, 35);
 			this->label1->Name = L"label1";
@@ -132,34 +129,24 @@ namespace guiFunds {
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Sign in  ";
 			this->label1->Click += gcnew System::EventHandler(this, &Login::sinupLabel_Click);
-			// 
-			// label2
-			// 
 			this->label2->AutoSize = true;
 			this->label2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Javanese Text", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"Javanese Text", 9.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(56, 136);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(75, 29);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Username  ";
-			//this->label2->Click += gcnew System::EventHandler(this, &Login::label2_Click);
-			// 
-			// label3
-			// 
 			this->label3->AutoSize = true;
 			this->label3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Javanese Text", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label3->Font = (gcnew System::Drawing::Font(L"Javanese Text", 9.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->Location = System::Drawing::Point(55, 221);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(66, 29);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Password";
-			// 
-			// usernameTextBox
-			// 
 			this->usernameTextBox->BackColor = System::Drawing::Color::Black;
 			this->usernameTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->usernameTextBox->ForeColor = System::Drawing::Color::White;
@@ -167,23 +154,17 @@ namespace guiFunds {
 			this->usernameTextBox->Name = L"usernameTextBox";
 			this->usernameTextBox->Size = System::Drawing::Size(280, 30);
 			this->usernameTextBox->TabIndex = 3;
-			// 
-			// passwordTextBox
-			// 
 			this->passwordTextBox->BackColor = System::Drawing::Color::Black;
 			this->passwordTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->passwordTextBox->ForeColor = System::Drawing::Color::White;
 			this->passwordTextBox->Location = System::Drawing::Point(143, 220);
 			this->passwordTextBox->Name = L"passwordTextBox";
-			this->passwordTextBox->PasswordChar = '*';
+			this->passwordTextBox->PasswordChar = 42;
 			this->passwordTextBox->Size = System::Drawing::Size(280, 30);
 			this->passwordTextBox->TabIndex = 5;
-			// 
-			// LoginButton
-			// 
 			this->LoginButton->BackColor = System::Drawing::Color::Navy;
 			this->LoginButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->LoginButton->Font = (gcnew System::Drawing::Font(L"Javanese Text", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->LoginButton->Font = (gcnew System::Drawing::Font(L"Javanese Text", 14.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->LoginButton->ForeColor = System::Drawing::Color::Transparent;
 			this->LoginButton->Location = System::Drawing::Point(44, 416);
@@ -192,12 +173,9 @@ namespace guiFunds {
 			this->LoginButton->TabIndex = 6;
 			this->LoginButton->Text = L"Log in";
 			this->LoginButton->UseVisualStyleBackColor = false;
-			// 
-			// exitButton
-			// 
 			this->exitButton->BackColor = System::Drawing::Color::Black;
 			this->exitButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->exitButton->Font = (gcnew System::Drawing::Font(L"Javanese Text", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->exitButton->Font = (gcnew System::Drawing::Font(L"Javanese Text", 14.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->exitButton->ForeColor = System::Drawing::Color::Navy;
 			this->exitButton->Location = System::Drawing::Point(239, 416);
@@ -207,9 +185,6 @@ namespace guiFunds {
 			this->exitButton->Text = L"Exit";
 			this->exitButton->UseVisualStyleBackColor = false;
 			this->exitButton->Click += gcnew System::EventHandler(this, &Login::exitbutton_click);
-			// 
-			// termscheckBox
-			// 
 			this->termscheckBox->AutoSize = true;
 			this->termscheckBox->Location = System::Drawing::Point(45, 285);
 			this->termscheckBox->Name = L"termscheckBox";
@@ -219,13 +194,10 @@ namespace guiFunds {
 			this->termscheckBox->Text = L"I agree to";
 			this->termscheckBox->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->termscheckBox->UseVisualStyleBackColor = true;
-			// 
-			// termsLabel
-			// 
 			this->termsLabel->AutoSize = true;
 			this->termsLabel->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->termsLabel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->termsLabel->Font = (gcnew System::Drawing::Font(L"Javanese Text", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->termsLabel->Font = (gcnew System::Drawing::Font(L"Javanese Text", 9.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->termsLabel->ForeColor = System::Drawing::Color::Navy;
 			this->termsLabel->Location = System::Drawing::Point(120, 286);
@@ -235,9 +207,6 @@ namespace guiFunds {
 			this->termsLabel->Text = L"Terms and Conditions  ";
 			this->termsLabel->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->termsLabel->Click += gcnew System::EventHandler(this, &Login::termsLabel_click);
-			// 
-			// robotcheckBox
-			// 
 			this->robotcheckBox->AutoSize = true;
 			this->robotcheckBox->Location = System::Drawing::Point(37, 324);
 			this->robotcheckBox->Margin = System::Windows::Forms::Padding(1);
@@ -248,9 +217,6 @@ namespace guiFunds {
 			this->robotcheckBox->Tag = L"";
 			this->robotcheckBox->Text = L"I am not a robot.";
 			this->robotcheckBox->UseVisualStyleBackColor = true;
-			// 
-			// pictureBox1
-			// 
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->ImageLocation = L"";
@@ -262,13 +228,10 @@ namespace guiFunds {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 11;
 			this->pictureBox1->TabStop = false;
-			// 
-			// sinupLabel
-			// 
 			this->sinupLabel->AutoSize = true;
 			this->sinupLabel->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->sinupLabel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->sinupLabel->Font = (gcnew System::Drawing::Font(L"Javanese Text", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->sinupLabel->Font = (gcnew System::Drawing::Font(L"Javanese Text", 9.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->sinupLabel->ForeColor = System::Drawing::Color::Navy;
 			this->sinupLabel->Location = System::Drawing::Point(79, 358);
@@ -278,13 +241,10 @@ namespace guiFunds {
 			this->sinupLabel->Text = L"Sin Up  ";
 			this->sinupLabel->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->sinupLabel->Click += gcnew System::EventHandler(this, &Login::sinupLabel_Click);
-			// 
-			// fogotPasswordlabel
-			// 
 			this->fogotPasswordlabel->AutoSize = true;
 			this->fogotPasswordlabel->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->fogotPasswordlabel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->fogotPasswordlabel->Font = (gcnew System::Drawing::Font(L"Javanese Text", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->fogotPasswordlabel->Font = (gcnew System::Drawing::Font(L"Javanese Text", 9.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->fogotPasswordlabel->ForeColor = System::Drawing::Color::Navy;
 			this->fogotPasswordlabel->Location = System::Drawing::Point(142, 358);
@@ -294,17 +254,11 @@ namespace guiFunds {
 			this->fogotPasswordlabel->Text = L"Forgot Password";
 			this->fogotPasswordlabel->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->fogotPasswordlabel->Click += gcnew System::EventHandler(this, &Login::forgotPasswordlabel_click);
-			// 
-			// panel3
-			// 
 			this->panel3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel3->Location = System::Drawing::Point(136, 352);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(1, 35);
 			this->panel3->TabIndex = 14;
-			// 
-			// Login
-			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::Color::Black;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
@@ -326,7 +280,7 @@ namespace guiFunds {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Font = (gcnew System::Drawing::Font(L"Javanese Text", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Font = (gcnew System::Drawing::Font(L"Javanese Text", 9.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ForeColor = System::Drawing::Color::White;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
@@ -344,9 +298,19 @@ namespace guiFunds {
 
 private: System::Void exitbutton_click(System::Object^ sender, System::EventArgs^ e) {
 
-	this->Close();
+	// Display a message box to confirm exit
+	System::Windows::Forms::DialogResult result = MessageBox::Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
+
+	// Check the user's response
+	if (result == System::Windows::Forms::DialogResult::Yes) {
+		// Exit the application
+		Application::Exit();
+	}
 }
 private: System::Void sinupLabel_Click(System::Object^ sender, System::EventArgs^ e);
+//private: System::Void sinupButton_Click(System::Object^ sender, System::EventArgs^ e);
+
+
 private: System::Void forgotPasswordlabel_click(System::Object^ sender, System::EventArgs^ e) {
 
 }

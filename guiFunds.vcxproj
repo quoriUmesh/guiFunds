@@ -78,11 +78,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files\MySQL\MySQL Server 8.2\include;C:\Program Files\MySQL\MySQL Connector C++ 8.2\include\jdbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies />
+      <AdditionalDependencies>mysqlcppconn.lib;libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
+      <AdditionalLibraryDirectories>search-ms:displayname=Search%20Results%20in%20jsoncpp-master&amp;crumb=location:D%3A%5CDownloaded%20files%5CMiscallaneous%5Cjsoncpp%5Cjsoncpp-master\lib_json;D:\Downloaded files\Miscallaneous\curl-8.5.0_6-win64-mingw\curl-8.5.0_6-win64-mingw\lib;C:\Program Files\MySQL\MySQL Connector C++ 8.2\lib64\vs14;C:\Program Files\MySQL\MySQL Server 8.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -111,11 +113,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files\MySQL\MySQL Server 8.2\include;C:\Program Files\MySQL\MySQL Connector C++ 8.2\include\jdbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies />
+      <AdditionalDependencies>mysqlcppconn.lib;libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
+      <AdditionalLibraryDirectories>search-ms:displayname=Search%20Results%20in%20jsoncpp-master&amp;crumb=location:D%3A%5CDownloaded%20files%5CMiscallaneous%5Cjsoncpp%5Cjsoncpp-master\lib_json;D:\Downloaded files\Miscallaneous\curl-8.5.0_6-win64-mingw\curl-8.5.0_6-win64-mingw\lib;C:\Program Files\MySQL\MySQL Connector C++ 8.2\lib64\vs14;C:\Program Files\MySQL\MySQL Server 8.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -126,17 +130,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="account.cpp" />
+    <ClCompile Include="deleteAccount.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Registration.cpp" />
     <ClCompile Include="Sinup.cpp" />
+    <ClCompile Include="Transaction.cpp" />
+    <ClCompile Include="user.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="account.h" />
+    <ClInclude Include="DeleteAccount.h" />
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Registration.h" />
     <ClInclude Include="Sinup.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Transaction.h" />
+    <ClInclude Include="user.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Login.resx">
