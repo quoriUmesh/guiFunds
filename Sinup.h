@@ -103,6 +103,8 @@ namespace guiFunds {
 	private: System::Windows::Forms::Panel^ panel8;
 	private: System::Windows::Forms::Panel^ panel9;
 	private: System::Windows::Forms::Panel^ panel10;
+	private: System::Windows::Forms::Label^ dateFormat;
+
 
 
 	private:
@@ -160,6 +162,7 @@ namespace guiFunds {
 			this->confirmMpinbox = (gcnew System::Windows::Forms::TextBox());
 			this->confirmMpinLabel = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->dateFormat = (gcnew System::Windows::Forms::Label());
 			panel2 = (gcnew System::Windows::Forms::Panel());
 			panel1 = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -401,7 +404,7 @@ namespace guiFunds {
 			this->usernameTextBox->Name = L"usernameTextBox";
 			this->usernameTextBox->Size = System::Drawing::Size(200, 37);
 			this->usernameTextBox->TabIndex = 18;
-			this->usernameTextBox->TextChanged += gcnew System::EventHandler(this, &Sinup::usernameTextbox_TextChanged);
+			this->usernameTextBox->TextChanged += gcnew System::EventHandler(this, &Sinup::usernameTextBox_TextChanged);
 			// 
 			// label3
 			// 
@@ -409,7 +412,7 @@ namespace guiFunds {
 			this->label3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Javanese Text", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(15, 321);
+			this->label3->Location = System::Drawing::Point(7, 321);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(66, 29);
 			this->label3->TabIndex = 17;
@@ -473,6 +476,7 @@ namespace guiFunds {
 			this->passConfirmBox->PasswordChar = '*';
 			this->passConfirmBox->Size = System::Drawing::Size(200, 37);
 			this->passConfirmBox->TabIndex = 33;
+			this->passConfirmBox->TextChanged += gcnew System::EventHandler(this, &Sinup::passConfirmBox_TextChanged);
 			// 
 			// label8
 			// 
@@ -600,7 +604,7 @@ namespace guiFunds {
 			this->mpinTextbox->PasswordChar = '*';
 			this->mpinTextbox->Size = System::Drawing::Size(200, 37);
 			this->mpinTextbox->TabIndex = 54;
-			this->mpinTextbox->ModifiedChanged += gcnew System::EventHandler(this, &Sinup::mpinTextbox_TextChanged);
+			this->mpinTextbox->TextChanged += gcnew System::EventHandler(this, &Sinup::mpinTextbox_TextChanged);
 			// 
 			// label14
 			// 
@@ -608,7 +612,7 @@ namespace guiFunds {
 			this->label14->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label14->Font = (gcnew System::Drawing::Font(L"Javanese Text", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label14->Location = System::Drawing::Point(15, 384);
+			this->label14->Location = System::Drawing::Point(9, 384);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(43, 29);
 			this->label14->TabIndex = 49;
@@ -624,6 +628,7 @@ namespace guiFunds {
 			this->confirmMpinbox->PasswordChar = '*';
 			this->confirmMpinbox->Size = System::Drawing::Size(200, 37);
 			this->confirmMpinbox->TabIndex = 56;
+			this->confirmMpinbox->TextChanged += gcnew System::EventHandler(this, &Sinup::passConfirmBox_TextChanged);
 			// 
 			// confirmMpinLabel
 			// 
@@ -649,6 +654,18 @@ namespace guiFunds {
 			this->label13->TabIndex = 57;
 			this->label13->Text = L"*Mpin is necessary for transactions and must be 4 digits numeric.";
 			// 
+			// dateFormat
+			// 
+			this->dateFormat->AutoSize = true;
+			this->dateFormat->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->dateFormat->Font = (gcnew System::Drawing::Font(L"Javanese Text", 8.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dateFormat->Location = System::Drawing::Point(378, 176);
+			this->dateFormat->Name = L"dateFormat";
+			this->dateFormat->Size = System::Drawing::Size(98, 25);
+			this->dateFormat->TabIndex = 58;
+			this->dateFormat->Text = L"***YYYY-MM-DD";
+			// 
 			// Sinup
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 29);
@@ -657,6 +674,7 @@ namespace guiFunds {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(878, 612);
+			this->Controls->Add(this->dateFormat);
 			this->Controls->Add(this->label13);
 			this->Controls->Add(this->confirmMpinbox);
 			this->Controls->Add(this->panel10);
@@ -723,28 +741,14 @@ private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e)
 private:System::Void sinupLabel_Click(System::Object^ sender, System::EventArgs^ e);
 	
 
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-	// Display a message box to confirm exit
-	System::Windows::Forms::DialogResult result = MessageBox::Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
 
-	// Check the user's response
-	if (result == System::Windows::Forms::DialogResult::Yes) {
-		// Exit the application
-		Application::Exit();
-	}
-}
 
 private:System::Void sinupButton_Click(System::Object^ sender, System::EventArgs^ e);
 
-private: System::Void mpinTextbox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (confirmMpinbox->Text == mpinTextbox->Text && System::Text::RegularExpressions::Regex::IsMatch(mpinTextbox->Text, "\\b\\d{4}\\b")) {
-		sinupButton->Enabled = true; // Enable the button if contents match
-	}
-	else {
-		sinupButton->Enabled = false; // Disable the button if contents do not match
-	}
-}
+
+
+
+
 
 private: System::Void passwordTextbox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (passwordTextBox->Text == passConfirmBox->Text) {
@@ -755,7 +759,53 @@ private: System::Void passwordTextbox_TextChanged(System::Object^ sender, System
 	}
 }
 
-private: System::Void usernameTextbox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void mpinTextbox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (mpinTextbox->Text == confirmMpinbox->Text && System::Text::RegularExpressions::Regex::IsMatch(mpinTextbox->Text, "\\b\\d{4}\\b")) {
+		sinupButton->Enabled = true; // Enable the button if contents match
+	}
+	else {
+		sinupButton->Enabled = false; // Disable the button if contents do not match
+	}
 }
+
+private: System::Void passConfirmBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (confirmMpinbox->Text == mpinTextbox->Text  && System::Text::RegularExpressions::Regex::IsMatch(confirmMpinbox->Text, "\\b\\d{4}\\b")) {
+		sinupButton->Enabled = true; // Enable the button if contents match
+	}
+	else {
+		sinupButton->Enabled = false; // Disable the button if contents do not match
+	}
+}
+
+/*private: System::Void passConfirmBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (passConfirmBox->Text == passwordTextBox->Text) {
+		sinupButton->Enabled = true; // Enable the button if contents match
+	}
+	else {
+		sinupButton->Enabled = false; // Disable the button if contents do not match
+	}
+}*/
+
+private: System::Void usernameTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (!String::IsNullOrEmpty(usernameTextBox->Text)) {
+		sinupButton->Enabled = true; // Enable the button if contents match
+	}
+	else {
+		sinupButton->Enabled = false; // Disable the button if contents do not match
+	}
+}
+
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	 // Display a message box to confirm exit
+	 System::Windows::Forms::DialogResult result = MessageBox::Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
+
+	// Check the user's response
+	if (result == System::Windows::Forms::DialogResult::Yes) {
+	  // Exit the application
+	   Application::Exit();
+	}
+}
+
 };
 }

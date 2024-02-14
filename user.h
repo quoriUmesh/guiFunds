@@ -13,7 +13,7 @@ public:
 	User();
 	User(string username, string password, int wallet_id );
 	string getUsername();
-	string gatPassword();
+	string getPassword();
 	int getWallet_id();
 	void setUsername(string username);
 	void setPassword(string password);

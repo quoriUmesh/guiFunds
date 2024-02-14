@@ -22,7 +22,7 @@ void User::setMpin(int mpin) {
 string User::getUsername() { 
 	return username; }
 
-string User::gatPassword() {
+string User::getPassword() {
 	return password;
 }
 

@@ -8,12 +8,17 @@
 #include <cppconn/exception.h>
 #include <cppconn/resultset.h>
 #include <cppconn/statement.h>
+#include <cppconn/prepared_statement.h>
 #include <chrono>
 #include <thread>
 
 using namespace std;
 using namespace std::this_thread;
 using namespace std::chrono;
+using namespace System;
+using namespace System::Windows::Forms;
+
+
 sql::Statement* stmt;
 sql::ResultSet* res;
 void Registration::set_email(string email) {
@@ -25,6 +30,16 @@ void Registration::set_address(string address) {
 void Registration::set_phone(string phone) {
     this->phone = phone;
 }
+
+void Registration::set_dob(string dob) {
+    DOB = dob;
+}
+
+void Registration::set_name(string name) {
+    fullName = name;
+}
+
+
 
 /*void Registration::get_data()
 {
@@ -98,45 +113,46 @@ void Registration::get_user_id()
     }
 
 }
-
-int Registration::confirm_registration()
-{
-
-    try
-    {
-
+*/
+int Registration::confirm_registration() {
+    try {
+       
+        
         sql::mysql::MySQL_Driver* driver;
         sql::Connection* con;
+        sql::PreparedStatement* prep_stmt;
 
         driver = sql::mysql::get_mysql_driver_instance();
         con = driver->connect("tcp://127.0.0.1:3306", "root", "quoriumesh");
-        stmt = con->createStatement();
-       // stmt->execute("CREATE DATABASE IF NOT EXISTS IFUNDs"); // CREATES DATABASE
-        con->setSchema("ifunds"); // CALLS DATABASE
+        con->setSchema("ifunds");
 
-        //stmt->execute("CREATE TABLE IF NOT EXISTS info( id int auto_increment, name text(255), age int not null, email text(255), password text(255), mpin int not null, unique KEY (ID),PRIMARY KEY (name(255)) )"); // CREATES TABLE
+        // Create a table if it doesn't exist
+       // stmt->execute("CREATE TABLE IF NOT EXISTS info(id int auto_increment, name text(255), DOB date,email varchar(255),addresss varchar(255),username varchar(50),password varchar(255),amount double,mpin int not null, unique KEY(ID), PRIMARY KEY(username)");
 
+        // Prepare and execute SQL insert statement
+        prep_stmt = con->prepareStatement("INSERT INTO info (name, DOB, email, address, username, password, mpin, amount) VALUES (?, ?, ?, ?, ?, ? ,? , 0)");
+        prep_stmt->setString(1, username);
+        prep_stmt->setString(2, DOB);
+        prep_stmt->setString(3, email);
+        prep_stmt->setString(4, address);
+        prep_stmt->setString(5, password);
+        prep_stmt->setInt(6, mpin);
 
+        prep_stmt->execute();
 
-
-
-
-        Registration r;
-        r.get_data();  //gets data from user
-        cout << "registered sucessufully:\n";
-        r.get_user_id();
-
-
-        delete res;
-        delete stmt;
+        // Cleanup
+        delete prep_stmt;
         delete con;
+
+        return 0; // Successful registration
     }
-    catch (sql::SQLException& e)
-    {
-        cerr << "SQL Error: " << e.what() << endl;
-        cerr << "SQL State: " << e.getSQLState() << endl;
-        return 1;
+    catch (sql::SQLException& ex) {
+        std::cerr << "MySQL Error: " << ex.what() << std::endl;
+        MessageBox::Show("A MySQL error occurred: " + gcnew System::String(ex.what()), "MySQL Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+    }
+    catch (System::Exception^ ex) {
+        MessageBox::Show("An error occurred: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
     }
 
-    return 0;
-}*/
+    return -1; // Error during registration
+}
